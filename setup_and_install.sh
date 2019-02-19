@@ -36,10 +36,3 @@ test -d /var/lock/subsys || sudo mkdir /var/lock/subsys
 sudo rpm --install --nodeps --nopre "$ORACLE_FILE"
 
 
-( echo ; echo ; echo travis ; echo travis ; echo n ) | sudo AWK='/usr/bin/awk' /etc/init.d/oracle-xe configure
-
-"$ORACLE_HOME/bin/sqlplus" -L -S / AS SYSDBA <<SQL
-CREATE USER travis IDENTIFIED BY travis;
-GRANT CONNECT, RESOURCE TO travis;
-GRANT EXECUTE ON SYS.DBMS_LOCK TO travis;
-SQL
