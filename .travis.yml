@@ -8,6 +8,6 @@ env:
 before_install:
   - sudo apt-get install p7zip-full
   - wget https://raw.githubusercontent.com/acekun141/oracle18c/master/download.sh
-  - bash ./setup_and_install.sh
+  - bash ./download.sh
   - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip
   # - wget https://raw.githubusercontent.com/acekun141/oracle18c/master/setup_and_install.sh
