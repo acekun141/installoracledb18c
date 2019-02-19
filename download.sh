@@ -1,13 +1,37 @@
 #!/bin/sh -e
 
-wget https://raw.githubusercontent.com/Vincit/travis-oracledb-xe/master/packages/oracle-xe-11.2.0-1.0.x86_64.rpm.zip.aa
-wget https://raw.githubusercontent.com/Vincit/travis-oracledb-xe/master/packages/oracle-xe-11.2.0-1.0.x86_64.rpm.zip.ab
-wget https://raw.githubusercontent.com/Vincit/travis-oracledb-xe/master/packages/oracle-xe-11.2.0-1.0.x86_64.rpm.zip.ac
-wget https://raw.githubusercontent.com/Vincit/travis-oracledb-xe/master/packages/oracle-xe-11.2.0-1.0.x86_64.rpm.zip.ad
-cat oracle-xe-11.2.0-1.0.x86_64.rpm.zip.* > oracle-xe-11.2.0-1.0.x86_64.rpm.zip
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.001
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.002
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.003
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.004
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.005
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.006
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.007
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.008
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.009
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.010
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.011
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.012
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.013
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.014
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.015
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.016
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.017
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.018
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.019
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.020
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.021
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.022
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.023
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.024
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.025
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.026
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.027
+wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.028
 
 
-export ORACLE_FILE="oracle-xe-11.2.0-1.0.x86_64.rpm.zip"
+
+export ORACLE_FILE="oracle-database-xe-18c-1.0-1.x86_64.rpm.zip"
 export ORACLE_HOME="/u01/app/oracle/product/11.2.0/xe"
 export ORACLE_SID=XE
 
@@ -42,7 +66,6 @@ test -f /sbin/chkconfig ||
 
 test -d /var/lock/subsys || sudo mkdir /var/lock/subsys
 
-unzip -j "$(basename $ORACLE_FILE)" "*/$ORACLE_RPM"
 sudo rpm --install --nodeps --nopre "$ORACLE_RPM"
 
 echo 'OS_AUTHENT_PREFIX=""' | sudo tee -a "$ORACLE_HOME/config/scripts/init.ora" > /dev/null
