@@ -33,6 +33,5 @@ test -f /sbin/chkconfig ||
 
 test -d /var/lock/subsys || sudo mkdir /var/lock/subsys
 
-sudo rpm --install --nodeps --nopre "$ORACLE_FILE"
 
 
