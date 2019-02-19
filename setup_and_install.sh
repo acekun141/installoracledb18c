@@ -1,6 +1,7 @@
 #!/bin/sh -e
-export ORACLE_FILE= "oracle-database-xe-18c-1.0-1.x86_64.rpm"
-export ORACLE_HOME= "/u01/app/oracle/product/18.1.0/xe"
+
+export ORACLE_FILE="oracle-database-xe-18c-1.0-1.x86_64.rpm.zip"
+export ORACLE_HOME="/u01/app/oracle/product/11.2.0/xe"
 export ORACLE_SID=XE
 
 # make sure that hostname is found from hosts (or oracle installation will fail)
@@ -19,6 +20,7 @@ ping -c1 $(hostname) || echo 127.0.0.1 $(hostname) | sudo tee -a /etc/hosts
 # CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
 # NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+ORACLE_RPM="$(basename $ORACLE_FILE .zip)"
 
 cd "$(dirname "$(readlink -f "$0")")"
 
@@ -33,5 +35,15 @@ test -f /sbin/chkconfig ||
 
 test -d /var/lock/subsys || sudo mkdir /var/lock/subsys
 
+sudo rpm --install --nodeps --nopre "$ORACLE_RPM"
 
+echo 'OS_AUTHENT_PREFIX=""' | sudo tee -a "$ORACLE_HOME/config/scripts/init.ora" > /dev/null
+sudo usermod -aG dba $USER
 
+( echo ; echo ; echo travis ; echo travis ; echo n ) | sudo AWK='/usr/bin/awk' /etc/init.d/oracle-xe configure
+
+"$ORACLE_HOME/bin/sqlplus" -L -S / AS SYSDBA <<SQL
+CREATE USER travis IDENTIFIED BY travis;
+GRANT CONNECT, RESOURCE TO travis;
+GRANT EXECUTE ON SYS.DBMS_LOCK TO travis;
+SQL
