@@ -48,3 +48,10 @@ sudo rpm --install --nodeps --nopre "$ORACLE_RPM"
 echo 'OS_AUTHENT_PREFIX=""' | sudo tee -a "$ORACLE_HOME/config/scripts/init.ora" > /dev/null
 sudo usermod -aG dba $USER
 
+( echo ; echo ; echo travis ; echo travis ; echo n ) | sudo AWK='/usr/bin/awk' /etc/init.d/oracle-xe configure
+
+"$ORACLE_HOME/bin/sqlplus" -L -S / AS SYSDBA <<SQL
+CREATE USER travis IDENTIFIED BY travis;
+GRANT CONNECT, RESOURCE TO travis;
+GRANT EXECUTE ON SYS.DBMS_LOCK TO travis;
+SQL
