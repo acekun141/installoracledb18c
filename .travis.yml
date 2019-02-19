@@ -8,3 +8,7 @@ env:
 before_install:
   - sudo apt-get install p7zip-full
   - wget https://raw.githubusercontent.com/acekun141/oracle18c/master/setup_and_install.sh
+  - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/Presentation1.zip.001
+  - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/Presentation1.zip.002
+  - 7z x Presentation1.zip.001
+  - ls
