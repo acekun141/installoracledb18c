@@ -1,5 +1,4 @@
 #!/bin/sh -e
-
 wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.001
 wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.002
 wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.003
@@ -28,5 +27,5 @@ wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracl
 wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.026
 wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.027
 wget https://raw.githubusercontent.com/acekun141/oracle18c/master/packages/oracle-database-xe-18c-1.0-1.x86_64.zip.028
-
-unzip oracle-database-xe-18c-1.0-1.x86_64.zip.001
+sudo apt-get install p7zip-full
+7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
