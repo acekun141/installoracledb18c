@@ -1,6 +1,6 @@
 #!/bin/sh -e
-export ORACLE_FILE= "oracle-xe-11.2.0-1.0.x86_64.rpm"
-ORACLE_HOME= "/u01/app/oracle/product/12.1.0/xe"
+export ORACLE_FILE= "oracle-database-xe-18c-1.0-1.x86_64.rpm"
+export ORACLE_HOME= "/u01/app/oracle/product/18.1.0/xe"
 export ORACLE_SID=XE
 
 # make sure that hostname is found from hosts (or oracle installation will fail)
