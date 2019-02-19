@@ -4,16 +4,7 @@ sudo: required
 
 env:
   - ORACLE_HOME=/u01/app/oracle/product/18.1.0/xe ORACLE_SID=XE OCI_LIB_DIR=/u01/app/oracle/product/18.1.0/xe/lib LD_LIBRARY_PATH=/u01/app/oracle/product/18.1.0/xe/lib
-cache: 
-  yarn: true
-  directories: 
-    - oracle-database-xe-18c-1.0-1.x86_64.rpm
-    - ~/.npm
-    - ~/.cache
 before_install:
   - sudo apt-get install p7zip-full
-  - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/download.sh
-  - bash ./download.sh
-  - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
   - wget https://raw.githubusercontent.com/acekun141/oracle18c/master/setup_and_install.sh
   - bash ./setup_and_install.sh
