@@ -1,7 +1,17 @@
 language: python
 dist: xenial
 sudo: required
-
+matrix:
+  include:
+    - os: linux
+      dist: precise
+      sudo: required
+    - os: linux
+      dist: trusty
+      sudo: required
+    - os: linux
+      dist: xenial
+      sudo: required
 env:
   ORACLE_SID=XE OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib
 before_install:
