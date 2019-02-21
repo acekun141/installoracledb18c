@@ -11,7 +11,4 @@ before_install:
   - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/download.sh
   - bash ./download.sh
   - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
-  - curl -o oracle-database-preinstall-18c-1.0-1.el6.x86_64.rpm https://yum.oracle.com/repo/OracleLinux/OL6/latest/x86_64/getPackage/oracle-database-preinstall-18c-1.0-1.el6.x86_64.rpm
-  - sudo yum -y localinstall oracle-database-preinstall-18c-1.0-1.el6.x86_64.rpm
   - sudo rpm -i oracle-database-xe-18c-1.0-1.x86_64.rpm
-  - rm oracle-database-preinstall-18c-1.0-1.el6.x86_64.rpm
