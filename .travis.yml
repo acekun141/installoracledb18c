@@ -10,4 +10,4 @@ before_install:
   - sudo apt-get install yum
   - sudo apt install virtualbox
   - sudo apt install vagrant
-  - sudo apt-git install alien
+  - sudo apt-get install alien
