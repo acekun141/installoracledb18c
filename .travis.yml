@@ -11,4 +11,4 @@ before_install:
   - git version
   - echo $HOME /root
   - git clone https://github.com/dockerhelp/docker-oracle-ee-18c.git
-  - sh docker-oracle-ee-18c/install/oracle_18c_install.sh
+  - bash ./docker-oracle-ee-18c/install/oracle_18c_install.sh
