@@ -8,8 +8,7 @@ env:
 before_install:
   - sudo apt-get install p7zip-full
   - sudo apt-get install yum
-  - sudo yum -y install git
+  - git version
   - echo $HOME /root
   - git clone https://github.com/dockerhelp/docker-oracle-ee-18c.git
   - sh $HOME/docker-oracle-ee-18c/install/oracle_18c_install.sh
-  
