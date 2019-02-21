@@ -37,7 +37,7 @@ test -d /var/lock/subsys || sudo mkdir /var/lock/subsys
 
 sudo rpm --install --nodeps --nopre "$ORACLE_RPM"
 
-echo 'OS_AUTHENT_PREFIX=""' | sudo tee -a "$ORACLE_HOME/config/scripts/init.ora" > /dev/null
+echo 'OS_AUTHENT_PREFIX=""' | sudo tee -a "/u01/app/oracle/product/oracle-database-xe-18c/config/scripts/init.ora" > /dev/null
 sudo usermod -aG dba $USER
 
 ( echo ; echo ; echo travis ; echo travis ; echo n ) | sudo AWK='/usr/bin/awk' /etc/init.d/oracle-xe configure
