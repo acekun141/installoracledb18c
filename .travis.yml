@@ -7,6 +7,7 @@ env:
   ORACLE_SID=XE OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib
 before_install:
   - sudo apt-get install p7zip-full
+  - sudo apt-get install yum
   - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/download.sh
   - bash ./download.sh
   - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
