@@ -8,5 +8,7 @@ env:
 before_install:
   - sudo apt-get install p7zip-full
   - sudo apt-get install yum
+  - sudo apt install virtualbox
+  - sudo apt install vagrant
   - git version
   - git clone https://github.com/oracle/vagrant-boxes
