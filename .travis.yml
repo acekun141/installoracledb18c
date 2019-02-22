@@ -1,16 +1,7 @@
-language: python
-os: linux
-dist: xenial
 sudo: required
 
-env:
-  ORACLE_SID=XE OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib
-before_install:
-  - sudo apt-get install p7zip-full
-  - sudo apt-get install yum
-  - sudo apt-get install file initscripts
-  - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/download.sh
-  - bash ./download.sh
-  - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
-  - sudo apt-get install alien
-  - alien -i oracle-database-xe-18c-1.0-1.x86_64.rpm --scripts
+services:
+  - docker
+
+script:
+  - docker build -t quay.io/ukhomeofficedigital/oracle-database-express-edition-11g:travis .
