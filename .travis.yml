@@ -14,4 +14,4 @@ before_install:
   - bash ./download.sh
   - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
   - ls -al
-  - cat /etc/*release
+  - yum install oracle-database-xe-18c-1.0-1.x86_64.rpm
