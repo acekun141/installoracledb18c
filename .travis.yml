@@ -24,5 +24,5 @@ before_install:
   - bash ./download.sh
   - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
   - curl -o oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackage/oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm
-  - sudo yum install oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm
+  - sudo yum install oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm --skip-broken
 
