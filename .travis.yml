@@ -8,4 +8,4 @@ env:
 before_install:
   - sudo apt-get install p7zip-full
   - sudo apt-get install yum
-  - sudo yum repolist all
+  - sudo yum install -y make
