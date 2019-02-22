@@ -9,8 +9,8 @@ before_install:
   - sudo apt-get install p7zip-full
   - sudo apt-get install yum
   - sudo apt-get install file initscripts
+  - sudo apt-get install alien libaio1 unixodbc vim
   - wget https://raw.githubusercontent.com/acekun141/installoracledb18c/master/download.sh
   - bash ./download.sh
   - 7z x oracle-database-xe-18c-1.0-1.x86_64.zip.001
-  - curl -o oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm https://yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/getPackage/oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm
-  - sudo yum -y localinstall oracle-database-preinstall-18c-1.0-1.el7.x86_64.rpm
+  - sudo alien --scripts -d oracle-xe-11.2.0-1.0.x86_64.rpm
